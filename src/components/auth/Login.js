@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 const Login = () => {
   const [user, setUser] = useState({
     email: '',
@@ -11,12 +13,15 @@ const Login = () => {
       [e.target.name]: e.target.value,
     });
   };
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="form-user">
       <div className="container-form shadow-dark">
         <h1>New Session</h1>
 
-        <form>
+        <form onSubmit={onSubmit}>
           <div className="form-input">
             <label htmlFor="email">Email</label>
             <input
@@ -47,6 +52,9 @@ const Login = () => {
             />
           </div>
         </form>
+        <Link to={'/new-account'} className="link-account">
+          Get account
+        </Link>
       </div>
     </div>
   );
