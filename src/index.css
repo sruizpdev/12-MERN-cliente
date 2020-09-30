@@ -91,7 +91,7 @@ a {
 }
 
 @media (min-width: 768px) {
-  .contenedor-app {
+  .app-container {
     display: flex;
     min-height: 100vh;
   }
@@ -100,7 +100,7 @@ a {
     background-color: var(--blanco);
     flex: 0 0 300px;
   }
-  .seccion-principal {
+  .main-section {
     flex: 1;
   }
 }
@@ -110,24 +110,24 @@ aside {
   padding: 3rem;
 }
 
-.formulario-nuevo-proyecto {
+.form-new-project {
   margin-top: 6rem;
 }
-.formulario-nuevo-proyecto .input-text {
+.form-new-project .input-text {
   border-bottom: 1px solid var(--gris2);
   border-radius: 0;
   background-color: var(--gris1);
 }
-.formulario-nuevo-proyecto .input-text::placeholder {
+.form-new-project .input-text::placeholder {
   color: var(--gris2);
 }
-.proyectos {
+.projects {
   margin-top: 10rem;
 }
-.listado-proyectos li {
+.list-projects li {
   margin-bottom: 2rem;
 }
-.listado-proyectos li a {
+.list-projects li a {
   font-size: 1.4rem;
   color: var(--gris2);
   line-height: 1.5;
@@ -139,12 +139,12 @@ aside {
   background-color: var(--gris2);
   padding: 4rem;
 }
-.nombre-usuario {
+.user-name {
   color: var(--blanco);
   font-size: 2.2rem;
   margin: 0;
 }
-.nombre-usuario span {
+.user-name span {
   font-weight: 900;
 }
 .nav-principal a {
@@ -180,7 +180,7 @@ aside {
 }
 
 /** TAREAS LISTADO **/
-.contenedor-tareas {
+.tasks-container {
   padding: 4rem;
 }
 
