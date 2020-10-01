@@ -1,6 +1,8 @@
 import React from 'react';
 import Bar from '../layouts/Bar';
 import Sidebar from '../layouts/Sidebar';
+import FromTask from '../tasks/FormTask';
+import ListTask from '../tasks/ListTaks';
 
 const Projects = () => {
   return (
@@ -9,7 +11,10 @@ const Projects = () => {
       <div className="main-section">
         <Bar />
         <main>
-          <div className="tasks-container"></div>
+          <FromTask />
+          <div className="tasks-container">
+            <ListTask />
+          </div>
         </main>
       </div>
     </div>
