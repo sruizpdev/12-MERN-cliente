@@ -3,14 +3,23 @@ import projectContext from '../../context/projects/projectContex';
 
 const NewProject = () => {
   const projectsContext = useContext(projectContext);
-  const { form, showForm } = projectsContext;
+  const { form, showForm, addProject } = projectsContext;
 
   const [project, setProject] = useState({
     name: '',
   });
   const { name } = project;
+
   const onSubmitProject = (e) => {
     e.preventDefault();
+    if (name === '') {
+      return;
+    }
+    addProject(project);
+
+    setProject({
+      nanme: '',
+    });
   };
   const onChangeProject = (e) => {
     setProject({
@@ -30,7 +39,7 @@ const NewProject = () => {
       </button>
 
       {form ? (
-        <form className="form-new-project" onSubmit="onSubmitProject">
+        <form className="form-new-project" onSubmit={onSubmitProject}>
           <input
             type="text"
             className="input-text"
