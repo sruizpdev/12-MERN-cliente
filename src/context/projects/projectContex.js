@@ -1,4 +1,4 @@
 import { createContext } from 'react';
 
-const projectContext = createContext();
-export default projectContext;
+const ProjectContext = createContext();
+export default ProjectContext;

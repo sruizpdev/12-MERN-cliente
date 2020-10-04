@@ -7,7 +7,7 @@ import {
   CURRENT_PROJECT,
   DELETE_PROJECT,
 } from '../../types';
-import projectContext from './projectContex';
+import ProjectContext from './projectContex';
 import projectReducer from './projectReducer';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -65,7 +65,7 @@ const ProjectState = (props) => {
   };
 
   return (
-    <projectContext.Provider
+    <ProjectContext.Provider
       value={{
         form: state.form,
         projects: state.projects,
@@ -80,7 +80,7 @@ const ProjectState = (props) => {
       }}
     >
       {props.children}
-    </projectContext.Provider>
+    </ProjectContext.Provider>
   );
 };
 export default ProjectState;

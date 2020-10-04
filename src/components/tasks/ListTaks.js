@@ -1,34 +1,20 @@
 import React, { Fragment, useContext } from 'react';
-import projectContext from '../../context/projects/projectContex';
+import ProjectContext from '../../context/projects/projectContex';
+import TaskContext from '../../context/task/taskContext';
 
 import Task from './Task';
 
 const ListTask = () => {
-  const projectsContext = useContext(projectContext);
+  const projectsContext = useContext(ProjectContext);
   const { project, deleteProject } = projectsContext;
+
+  const taskContext = useContext(TaskContext);
+  const { tasksproject } = taskContext;
+
   if (!project) {
     return <h1>Select a project</h1>;
   }
   const [currentProject] = project;
-
-  const tasksProject = [
-    {
-      name: 'choose platform',
-      status: true,
-    },
-    {
-      name: 'choose color',
-      status: true,
-    },
-    {
-      name: 'choose pay platform',
-      status: false,
-    },
-    {
-      name: 'choose platform',
-      status: true,
-    },
-  ];
 
   return (
     <Fragment>
@@ -37,10 +23,10 @@ const ListTask = () => {
         {currentProject.name}
       </h2>
       <ul className="task-list">
-        {tasksProject.length === 0 ? (
+        {tasksproject.length === 0 ? (
           <li>No task</li>
         ) : (
-          tasksProject.map((task) => <Task task={task} />)
+          tasksproject.map((task) => <Task key={task.id} task={task} />)
         )}
       </ul>
       <button
