@@ -4,7 +4,7 @@ import TaskContext from '../../context/task/taskContext';
 
 const Task = ({ task }) => {
   const tasksContext = useContext(TaskContext);
-  const { deleteTask, getTasks, changeStatus } = tasksContext;
+  const { deleteTask, getTasks, changeStatus, saveCurrentTask } = tasksContext;
 
   const projectsContext = useContext(ProjectContext);
   const { project } = projectsContext;
@@ -19,6 +19,9 @@ const Task = ({ task }) => {
   const changeStatusTask = (task) => {
     task.status = !task.status;
     changeStatus(task);
+  };
+  const selectCurrentTask = (task) => {
+    saveCurrentTask(task);
   };
 
   return (
@@ -44,7 +47,11 @@ const Task = ({ task }) => {
         )}
       </div>
       <div className="actions">
-        <button type="button" className="btn btn-primary">
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => selectCurrentTask(task)}
+        >
           Edit
         </button>
         <button
