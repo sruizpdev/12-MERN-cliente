@@ -13,6 +13,7 @@ const FromTask = () => {
     validateTask,
     errortask,
     getTasks,
+    updateTask,
   } = tasksContext;
 
   useEffect(() => {
@@ -45,11 +46,14 @@ const FromTask = () => {
       validateTask();
       return;
     }
+    if (selectedTask === null) {
+      task.projectId = currentProject.id;
+      task.status = false;
 
-    task.projectId = currentProject.id;
-    task.status = false;
-
-    addTask(task);
+      addTask(task);
+    } else {
+      updateTask(task);
+    }
 
     getTasks(currentProject.id);
 
