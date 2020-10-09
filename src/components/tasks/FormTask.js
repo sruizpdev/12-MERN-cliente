@@ -14,6 +14,7 @@ const FromTask = () => {
     errortask,
     getTasks,
     updateTask,
+    clearTask,
   } = tasksContext;
 
   useEffect(() => {
@@ -53,6 +54,7 @@ const FromTask = () => {
       addTask(task);
     } else {
       updateTask(task);
+      clearTask();
     }
 
     getTasks(currentProject.id);

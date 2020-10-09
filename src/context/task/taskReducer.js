@@ -6,6 +6,7 @@ import {
   STATUS_TASK,
   CURRENT_TASK,
   UPDATE_TASK,
+  CLEAR_TASK,
 } from '../../types';
 export default (state, action) => {
   switch (action.type) {
@@ -52,6 +53,11 @@ export default (state, action) => {
         tasks: state.tasks.map((task) =>
           task.id === action.payload.id ? action.payload : task
         ),
+      };
+    case CLEAR_TASK:
+      return {
+        ...state,
+        selectedTask: null,
       };
     default:
       return state;
